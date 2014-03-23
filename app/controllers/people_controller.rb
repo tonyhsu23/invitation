@@ -33,12 +33,12 @@ class PeopleController < ApplicationController
   	
     unless @person.blank?
   	  if @person.update(person_params)
-  		  redirect_to location_path
+  		  redirect_to location_path, notice: "感謝您撥冗填寫，我們已經收到您的回應。"
   	  else
-  		  redirect_to :back
+  		  redirect_to :back, notice: "Sorry, wrong LDAP ID"
   	  end
     else
-      redirect_to :back
+      redirect_to :back, notice: "Sorry, wrong LDAP ID"
     end
 
   end
