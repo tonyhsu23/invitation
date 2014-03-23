@@ -1,0 +1,28 @@
+<div>
+  <%= link_to("Initial", new_person_path, :class => "btn btn-mini")%>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>LDAP</th>
+        <th>Professor</th>
+        <th>attend?</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @people.each do |p| %>
+      <tr>
+        <td><%= p.id %></td>
+        <td><%= p.ldap %></td>
+        <td><%= p.name %></td>
+        <td><%= p.attend.to_s %></td>
+        <td> 
+          <%= link_to("Delete", person_path(p), :class => "btn btn-mini", :method => :delete, :confirm => "Are you sure?" )%>
+        </td>
+      </tr>  
+      <% end %>          
+    </tbody>
+  </table>
+</div>

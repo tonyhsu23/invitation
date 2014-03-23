@@ -1,0 +1,14 @@
+<%= simple_form_for @person do |f| %>
+  <%= f.input :ldap, label: "LDAP", placeholder: "LDAP", :input_html => {:class =>"form-control"} %>
+  <br>
+  <%= f.input :name, label: "姓名", placeholder: "name", :input_html => {:class =>"form-control"} %>
+  <br>
+  <div class="form-group">
+  	<%= f.input :attend, as: :radio_buttons, label: "是否出席？" %>
+  </div>
+  <br>
+  <div class="form-actions">
+	<%= f.submit "Submit", :disable_with => 'Submiting...', :class => "btn btn-primary" %>
+  </div>
+  <br>
+<% end %>
