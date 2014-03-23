@@ -1,35 +1,59 @@
+<% teacherLink = "http://www.im.fju.edu.tw/Chweb/Teacher/LoadImg.asp?TeaID=" %>
+<% assistantLink = "http://www.im.fju.edu.tw/Chweb/Teacher/LoadImgAss.asp?ID=" %>
+
 <div class="jumbotron">
-  <h1>Jumbotron heading</h1>
-  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+  <h2>親愛的師長們：</h2><br>
+  <p class="lead">
+    學生們為了感謝您的辛勞，謹訂於 103年6月18日（三）<br>晚間19:00，假臺北花園大酒店—六國餐廳舉辦「第三十屆輔仁資管謝師宴」，敬請撥冗參加！
+    <br>
+  </p>
+  <p class="lead">
+    請師長們在下方列表中選取您的大名，以幫助我們完成出席調查表，若師長們有任何的問題皆可向系秘書或是相關負責人詢問，恭呈此函給您，敬邀備宴。
+  </p> 
 </div>
 
 <div class="row featurette">
-  <div class="col-md-7 table-responsive">
+  <div class="col-md-12 table-responsive">
     <div class="table-responsive">
-      <br><strong>我是</strong>	
-	  <table class="table table-striped">
-	  	<tbody>
-        <% count = 1 %>
-	  	  <% @people.each do |person| %>
-          <% if count%6==1 && count!=1  %>
-            <tr>
-              <td><%= link_to(person.name, edit_person_path(person))%></td>
-          <% elsif count>6 && count%6==0 %>
-              <td><%= link_to(person.name, edit_person_path(person))%></td>
-            </tr>
-          <% else %>
-		        <td><%= link_to(person.name, edit_person_path(person))%></td>
-          <% end %>
-          <% count += 1 %>  
-		    <% end %>
-        </tr>          
-		  </tbody>
-  	</table>
-	</div>
-    <br><strong>老師 / 助教 / 秘書</strong><br>
-  </div>
-  
-  <div class="col-md-3 col-md-offset-2">
-    <%= image_tag "graph.png"%>
+      <h3 class="text-muted">老師</h3>
+  	  <table class="table table-striped">
+  	  	<tbody>
+          <% count = 1 %>
+          <% @teacher.each do |teacher| %>
+            <% if count>4 && count%4 == 1%>
+              <tr>
+            <% end %><!-- if -->
+
+            <td width="90px">
+              <%= link_to(image_tag(teacherLink+teacher.imgId, :class => "circular"), edit_person_path(teacher))%>
+            </td>
+            <td><br><%= link_to(teacher.name, edit_person_path(teacher))%></td>
+            <% count += 1 %>
+          <% end %><!-- each -->
+              </tr>   
+  		  </tbody>
+    	</table>
+      
+      <br>
+
+      <h3 class="text-muted">助教 秘書</h3>
+      <table class="table table-striped">
+        <tbody>
+          <% count = 1 %>
+          <% @assistant.each do |assistant| %>
+            <% if count>4 && count%4 == 1%>
+              <tr>
+            <% end %><!-- if -->
+
+            <td width="90px">
+              <%= link_to(image_tag(assistantLink+assistant.imgId, :class => "circular"), edit_person_path(assistant))%>
+            </td>
+            <td><br><%= link_to(assistant.name, edit_person_path(assistant))%></td>
+            <% count += 1 %>
+          <% end %><!-- each -->
+              </tr>   
+        </tbody>
+      </table>
+	  </div>
   </div>
 </div><br>

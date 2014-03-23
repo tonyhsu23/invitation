@@ -5,7 +5,8 @@ class PeopleController < ApplicationController
   end
 
   def show
-  	@people = Person.all
+    @teacher = Person.where(position: 't')
+    @assistant = Person.where(position: 'a')
   end
 
   def new
@@ -49,8 +50,9 @@ class PeopleController < ApplicationController
   end
 
   private
+
   def person_params
-	params.require(:person).permit(:ldap, :name, :attend)
+	  params.require(:person).permit(:ldap, :name, :attend, :imgId, :position)
   end
 
 end

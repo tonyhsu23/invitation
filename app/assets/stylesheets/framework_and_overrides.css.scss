@@ -44,6 +44,27 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  background-color: #FBFBFB
+}
+
+.circular {
+  width: 65px;
+  height: 65px;
+  border-radius: 65px;
+  -webkit-border-radius: 65px;
+  -moz-border-radius: 65px;
+}
+
+td {
+  font-size: 15px
+}
+
+.footer p {
+  padding-left: 13px
+}
+
+h3 {
+  padding-left: 13px 
 }
 
 /* Customize container */
@@ -58,8 +79,10 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid #e5e5e5;
+  background-image: url(fju4.jpg);
+  color: white;
 }
 .jumbotron .btn {
   padding: 14px 24px;

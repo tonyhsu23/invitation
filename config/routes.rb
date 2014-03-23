@@ -1,7 +1,7 @@
 Invitation::Application.routes.draw do
-  #root to: "welcome#new"
-  root to: "people#show"
   resources :people 
+  root to: "people#show"
+  
   get 'contact' => "contact#index"
   get 'location' => "location#index"
 end

@@ -1,9 +1,9 @@
 <%= simple_form_for @person do |f| %>
-  <%= f.input :ldap, label: "LDAP", placeholder: "LDAP", :input_html => {:class =>"form-control"} %>
-  <br>
-  <%= f.input :name, label: "姓名", placeholder: "name", :input_html => {:class =>"form-control"} %>
-  <br>
-  <div class="form-group">
+  <%= f.input :ldap, label: "LDAP", placeholder: "LDAP", :input_html => {:class =>"form-control"} %><br>
+  <%= f.input :name, label: "姓名", placeholder: "name", :input_html => {:class =>"form-control"} %><br>
+  <%= f.input :imgId, label: "Image ID", placeholder: "Image ID", :input_html => {:class =>"form-control"} %><br>
+  <%= f.input :position, label: "職位(老師=t, 助教=a)", placeholder: "position", :input_html => {:class =>"form-control"} %>
+  <div class="form-group"><br>
   	<%= f.input :attend, as: :radio_buttons, label: "是否出席？" %>
   </div>
   <br>
