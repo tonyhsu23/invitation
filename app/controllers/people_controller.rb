@@ -29,10 +29,11 @@ class PeopleController < ApplicationController
   end
 
   def update
-  	@person = Person.find_by ldap: params[:person][:ldap]
+    @correct_person = Person.find(params[:id])
+  	@ldap_person = Person.find_by ldap: params[:person][:ldap]
   	
-    unless @person.blank?
-  	  if @person.update(person_params)
+    unless @ldap_person.blank? || !(@correct_person.name == @ldap_person.name)
+  	  if @ldap_person.update(person_params)
   		  redirect_to location_path, notice: "感謝您撥冗填寫，我們已經收到您的回應。"
   	  else
   		  redirect_to :back, notice: "Sorry, wrong LDAP ID"

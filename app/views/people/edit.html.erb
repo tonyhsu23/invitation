@@ -2,7 +2,8 @@
   <div class="col-md-6">
     <div class="form-group">
       <%= simple_form_for @person do |f| %>
-        <%= f.input :name, label: "姓名", :input_html => {:class => "form-control"}%><br>
+        <%= @person.position == "t" ? @person.name + " 老師" : @person.name + " 助教/秘書" %>
+        <br><br>
         <%= f.input :attend, as: :radio_buttons, label: "是否出席？" %><br>
         <%= f.input :ldap, label: "請輸入您的LDAP帳號以供我們驗證", :input_html => {value: ""} %><br>
         <%= f.submit "提交", :class => "btn btn-primary"  %>          

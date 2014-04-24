@@ -27,7 +27,16 @@
             <td width="90px">
               <%= link_to(image_tag(teacherLink+teacher.imgId, :class => "circular"), edit_person_path(teacher))%>
             </td>
-            <td><br><%= link_to(teacher.name, edit_person_path(teacher))%></td>
+            <td>
+              <%= link_to(teacher.name, edit_person_path(teacher))%><br>
+              <% if teacher.attend %>
+                <font class="list-group-item-success">出席</font>
+              <% elsif !teacher.attend.blank? %>
+                <font class="list-group-item-warning">尚未填寫</font>
+              <% else %>
+                <font class="list-group-item-danger">不出席</font>
+              <% end %>
+            </td>
             <% count += 1 %>
           <% end %><!-- each -->
               </tr>   
@@ -48,7 +57,16 @@
             <td width="90px">
               <%= link_to(image_tag(assistantLink+assistant.imgId, :class => "circular"), edit_person_path(assistant))%>
             </td>
-            <td><br><%= link_to(assistant.name, edit_person_path(assistant))%></td>
+            <td>
+              <%= link_to(assistant.name, edit_person_path(assistant))%><br>
+              <% if assistant.attend %>
+                <font class="list-group-item-success">出席</font>
+              <% elsif assistant.attend.blank? %>
+                <font class="list-group-item-warning">尚未填寫</font>
+              <% else %>
+                <font class="list-group-item-danger">不出席</font>
+              <% end %>
+            </td>
             <% count += 1 %>
           <% end %><!-- each -->
               </tr>   
