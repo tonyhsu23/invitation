@@ -31,7 +31,7 @@
               <%= link_to(teacher.name, edit_person_path(teacher))%><br>
               <% if teacher.attend %>
                 <font class="list-group-item-success">出席</font>
-              <% elsif !teacher.attend.blank? %>
+              <% elsif teacher.attend == nil %>
                 <font class="list-group-item-warning">尚未填寫</font>
               <% else %>
                 <font class="list-group-item-danger">不出席</font>
@@ -61,7 +61,7 @@
               <%= link_to(assistant.name, edit_person_path(assistant))%><br>
               <% if assistant.attend %>
                 <font class="list-group-item-success">出席</font>
-              <% elsif assistant.attend.blank? %>
+              <% elsif assistant.attend == nil %>
                 <font class="list-group-item-warning">尚未填寫</font>
               <% else %>
                 <font class="list-group-item-danger">不出席</font>
