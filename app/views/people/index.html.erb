@@ -7,8 +7,8 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>Image ID</th>
-        <th>LDAP</th>
+        <!-- <th>Image ID</th>
+        <th>LDAP</th> -->
         <th>Name</th>
         <th>Position</th>
         <th>attend?</th>
@@ -18,8 +18,8 @@
       <% @people.each do |p| %>
       <tr>
         <td><%= p.id %></td>
-        <td><%= p.imgId %></td>
-        <td><%= p.ldap %></td>
+        <!-- <td><%= p.imgId %></td>
+        <td><%= p.ldap %></td> -->
         <td><%= p.name %></td>
         <td><%= p.position=="t" ? "老師" : "助教/秘書" %></td>
         <td><%= p.attend.to_s %></td>
@@ -33,8 +33,6 @@
       <% end %><!-- each --> 
       <tr>
         <td>出席總人數</td>
-        <td>--</td>
-        <td>--</td>
         <td>--</td> 
         <td>--</td> 
         <td><%= count %>人</td>
