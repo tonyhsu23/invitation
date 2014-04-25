@@ -23,9 +23,9 @@
         <td><%= p.name %></td>
         <td><%= p.position=="t" ? "老師" : "助教/秘書" %></td>
         <td><%= p.attend.to_s %></td>
-        <td> 
+        <!-- <td> 
           <%= link_to("Delete", person_path(p), :class => "btn btn-mini", :method => :delete, :confirm => "Are you sure?" )%>
-        </td>
+        </td> -->
       </tr>
         <% if p.attend == true %>
           <% count += 1 %>
@@ -38,7 +38,6 @@
         <td>--</td> 
         <td>--</td> 
         <td><%= count %>人</td>
-        <td></td> 
       </tr>
     </tbody>
   </table>
