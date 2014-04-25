@@ -1,5 +1,8 @@
 Invitation::Application.routes.draw do
-  resources :people 
+  scope "/admin" do
+  	resources :people, only: [:index]
+  end
+  resources :people, except: [:index]
   root to: "people#show"
   
   get 'contact' => "contact#index"
