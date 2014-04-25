@@ -5,8 +5,8 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @teacher = Person.where(position: 't')
-    @assistant = Person.where(position: 'a')
+    @teacher = Person.where(position: 't').order('id asc')
+    @assistant = Person.where(position: 'a').order('id asc')
   end
 
   def new
