@@ -25,7 +25,7 @@
             <% end %><!-- if -->
 
             <td width="90px">
-              <%= link_to(image_tag(teacherLink+teacher.imgId, :class => "circular"), edit_person_path(teacher))%>
+              <%= link_to(image_tag(teacherLink+teacher.imgId, :class => "circular", alt: ""), edit_person_path(teacher))%>
             </td>
             <td>
               <%= link_to(teacher.name, edit_person_path(teacher))%><br>
